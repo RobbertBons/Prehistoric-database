@@ -2,7 +2,8 @@
     require_once 'dbconnect.php';
 
     class User extends DbConfig{
-
+        private $username;
+        private $password;
         public function create($data){
                 try{
                     if($data['password'] != $data['conf-password']){
@@ -16,7 +17,7 @@
                     if(!$stmt->execute()){
                         throw new Exception("Account kon niet aangemaakt worden.");
                     }
-                    // header("Location: login.php");
+                    header("Location: login.php");
                 }catch(Exception $e){
                     echo $e->getMessage();
                 }

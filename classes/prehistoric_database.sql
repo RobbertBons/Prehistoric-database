@@ -1,21 +1,21 @@
 CREATE TABLE post(
-  	postID INT(11),
+  	postID NOT NULL AUTO_INCREMENT,
     title varchar(255),
     beschrijving varchar(255),
     PRIMARY KEY(postID)
 );
 CREATE TABLE users (
-    userID INT(11),
+    userID NOT NULL AUTO_INCREMENT,
     post_id INT(11),
     username VARCHAR(255),
     password VARCHAR(255),
     PRIMARY KEY(userID),
-    FOREIGN KEY(post_id) REFERENCES post(postID)
+    FOREIGN KEY(post_id) REFERENCES post(postID),
+    NOT NULL AUTO_INCREMENT;
 );
 
-
 CREATE TABLE rol(
-	rolID INT(11),
+	rolID NOT NULL AUTO_INCREMENT,
     users_id INT(11),
     naam varchar(255),
     PRIMARY KEY(rolID),
@@ -23,7 +23,7 @@ CREATE TABLE rol(
     REFERENCES users(userID)
 );
 CREATE TABLE recht(
-	id INT(11),
+	id INT NOT NULL AUTO_INCREMENT,
     rol_id INT(11),
     naam varchar(255),
     PRIMARY KEY(id),
@@ -31,7 +31,7 @@ CREATE TABLE recht(
     REFERENCES rol(rolID)
 );
 CREATE TABLE Categorie_Post(
-	categorie_postID INT(11),
+	categorie_postID INT NOT NULL AUTO_INCREMENT,
     post_id INT(11),
     naam varchar(255),
     PRIMARY KEY(categorie_postID),
@@ -40,7 +40,7 @@ CREATE TABLE Categorie_Post(
 );
 
 CREATE TABLE items(
-	id INT(11),
+	id INT NOT NULL AUTO_INCREMENT,
     naam varchar(255),
     beschrijving varchar(255),
     diet varchar(255),
@@ -49,7 +49,7 @@ CREATE TABLE items(
     PRIMARY KEY(id)
 );
 CREATE TABLE resources(
-    resourcesID INT(11),
+    resourcesID INT NOT NULL AUTO_INCREMENT,
     items_id INT(11),
     plaatjes blob,
     video blob,
@@ -58,7 +58,7 @@ CREATE TABLE resources(
     REFERENCES items(id)
 );
 CREATE TABLE categorie(
-	categorieID INT(11),
+	categorieID INT NOT NULL AUTO_INCREMENT,
     naam varchar(255),
     contintent varchar(255),
     jaartal INT(10),
