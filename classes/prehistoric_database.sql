@@ -63,3 +63,29 @@ CREATE TABLE categorie(
     jaartal INT(10),
     PRIMARY KEY(categorieID)
 );
+
+/* hoe maak je een tussentabel aan?*/
+
+/*eerst maak je er een normale tabel van zonder pk of fk */
+CREATE TABLE items_post (
+    itemsID INT(10),
+    postID INT(10));
+
+/* vervolgends ga je in de tabel zelf aangeven dat het een alter table is en geef je fk mee */
+ALTER TABLE items_post 
+ADD FOREIGN KEY (itemsID) REFERENCES items (id);
+
+/* dat doe je met alle records in de tussentabel */
+ALTER TABLE items_post
+ADD FOREIGN KEY (postID) REFERENCES post (postID)
+
+/* Voorbeeld 2 */
+CREATE TABLE categorie_items (
+    categorieID INT(11),
+    itemsID INT(11));
+
+ALTER TABLE categorie_items 
+ADD FOREIGN KEY (categorieID) REFERENCES categorie (categorieID);
+
+ALTER TABLE categorie_items 
+ADD FOREIGN KEY (itemsID) REFERENCES items (id);
