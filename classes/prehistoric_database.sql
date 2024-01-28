@@ -1,21 +1,20 @@
 CREATE TABLE post(
-  	postID NOT NULL AUTO_INCREMENT,
+  	postID INT NOT NULL AUTO_INCREMENT,
     title varchar(255),
     beschrijving varchar(255),
     PRIMARY KEY(postID)
 );
 CREATE TABLE users (
-    userID NOT NULL AUTO_INCREMENT,
+    userID INT NOT NULL AUTO_INCREMENT,
     post_id INT(11),
     username VARCHAR(255),
     password VARCHAR(255),
     PRIMARY KEY(userID),
-    FOREIGN KEY(post_id) REFERENCES post(postID),
-    NOT NULL AUTO_INCREMENT;
+    FOREIGN KEY(post_id) REFERENCES post(postID)
 );
 
 CREATE TABLE rol(
-	rolID NOT NULL AUTO_INCREMENT,
+	rolID INT NOT NULL AUTO_INCREMENT,
     users_id INT(11),
     naam varchar(255),
     PRIMARY KEY(rolID),
