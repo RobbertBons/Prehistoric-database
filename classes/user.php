@@ -1,26 +1,27 @@
 <?php
-    require_once 'DbConfig.php';
+    require_once 'dbconnect.php';
 
     class User extends DbConfig{
 
         public function create($data){
-            try{
-                if($data['password'] != $data['conf-password']){
-                    throw new Exception("Wachtwoorden komen niet overeen.");
+                try{
+                    if($data['password'] != $data['conf-password']){
+                        throw new Exception("Wachtwoorden komen niet overeen.");
+                    }
+                    $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+                    $encryptedPassword = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]);
+                    $stmt = $this->connect()->prepare($sql);
+                    $stmt->bindParam(":username", $data['username']);
+                    $stmt->bindParam(":password", $encryptedPassword);
+                    if(!$stmt->execute()){
+                        throw new Exception("Account kon niet aangemaakt worden.");
+                    }
+                    // header("Location: login.php");
+                }catch(Exception $e){
+                    echo $e->getMessage();
                 }
-                $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
-                $encryptedPassword = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]);
-                $stmt = $this->connect()->prepare($sql);
-                $stmt->bindParam(":username", $data['username']);
-                $stmt->bindParam(":password", $encryptedPassword);
-                if(!$stmt->execute()){
-                    throw new Exception("Account kon niet aangemaakt worden.");
-                }
-                header("Location: login.php");
-            }catch(Exception $e){
-                echo $e->getMessage();
+                
             }
-        }
         
         public function getUser($username){//piet
             $sql = "SELECT * FROM users WHERE username = :username";
