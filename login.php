@@ -18,9 +18,9 @@ if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
     <main>
     	<section class="form">
 	    	<form method="post">
-	    		<label for="username" id="username">Gebruikersnaam: </label>
+	    		<label for="username" id="username">username: </label>
 	    		<input type="text" name="username" required><!-- admin -->
-	    		<label for="password">Wachtwoord: </label>
+	    		<label for="password">password: </label>
 	    		<input type="password" name="password" required>
 	    		<input type="submit" name="login" value="Login">
 	    	</form>

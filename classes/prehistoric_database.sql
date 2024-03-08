@@ -7,6 +7,8 @@ CREATE TABLE post(
 CREATE TABLE users (
     userID INT NOT NULL AUTO_INCREMENT,
     post_id INT(11),
+    firstname VARCHAR(255),
+    lastname VARCHAR(255),
     username VARCHAR(255),
     password VARCHAR(255),
     PRIMARY KEY(userID),
@@ -57,7 +59,7 @@ CREATE TABLE resources(
     REFERENCES items(id)
 );
 CREATE TABLE categorie(
-	categorieID INT NOT NULL AUTO_INCREMENT,
+	categorieID INT(10) NOT NULL AUTO_INCREMENT,
     naam varchar(255),
     contintent varchar(255),
     jaartal INT(10),

@@ -32,7 +32,7 @@
             return $stmt->fetch(PDO::FETCH_OBJ);
         }
 
-        public function getUserById($id){//eddie
+        public function getUserById($id){
             $sql = "SELECT * FROM users WHERE id = :id";
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindParam(":id", $id);
