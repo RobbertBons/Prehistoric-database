@@ -1,7 +1,28 @@
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 .button{
     border-radius: 10;
+}
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    text-align: center;
+    justify-content: space-between;
+    background-color: #fed684;
+    display: flex;
+}
+
+.nav{
+    font-size: 18;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 100px;
 }
