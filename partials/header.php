@@ -1,6 +1,4 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
 
 <header class="header">
     <img src="img/image2.png" class="logo" alt="">
@@ -9,8 +7,8 @@
             <a href="">About</a>
             <a href="">Continets</a>
             <a href="">Species</a>
+            <a href="login.php" class = 'button'>Login</a>
         </ul>
-        <a href="login.php" class = 'button'>Login</a>
         <input type="text" class="search-bar" placeholder="Search">
 </header>
 

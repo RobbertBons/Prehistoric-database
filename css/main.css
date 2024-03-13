@@ -3,9 +3,58 @@
     padding: 0;
 }
 
-h1{
-    text-align: center;
+.banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
-.species{
+
+.banner-container {
+    width: 300%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.banner-slide {
+    flex: 1 0 100%;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+.species {
     text-align : center;
+    padding: 10px;
+    margin-top: 20px;
+ 
+}
+.title{
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.title h2 {
+    font-size: 100px; /* Adjust the font size for h2 */
 }

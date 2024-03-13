@@ -1,67 +1,53 @@
-<?php
-    require_once 'partials/header.php'
-?>
+<?php require_once 'partials/header.php'; ?>
 
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <body>
-    <section class="banner">
+
+<section class="banner">
         <div class="banner-container">
             <div class="banner-slide">
-                <img class="banner-image" src="img/OIG2.jpg" alt="Banner Image 1">
+                <img class="banner-image" src="img/prehistory.png" alt="Banner Image 1">
             </div>
             <div class="banner-slide">
-                <img class="banner-image" src="img/OIG4.jpg" alt="Banner Image 2">
+                <img class="banner-image" src="peakpx.jpg" alt="Banner Image 2">
             </div>
             <div class="banner-slide">
-                <img class="banner-image" src="img/OIG5.jpg" alt="Banner Image 3">
+                <img class="banner-image" src="image3.jpg" alt="Banner Image 3">
             </div>
         </div>
-        <button class="carousel-btn prev-btn" onclick="prevSlide()">Prev</button>
-        <button class="carousel-btn next-btn" onclick="nextSlide()">Next</button>
     </section>
 
-    <section>
-        <article>
-            <h1>Welcome by Paleo Chronical</h1>
-        </article>
-    </section>
-    <section>
-        <article class='species'>
-            <p>species</p>
-        </article>
-    </section>
+<section>
+    <article class='title'>
+        <h1>Welcome to Paleo Chronicle</h1>
+        <p>Explore the fascinating world of prehistoric creatures and ancient history!</p>
+    </article>
+</section>
+
+<section>
+    <article class='species'>
+        <h2>Featured Species</h2>
+        <p>Discover the amazing diversity of prehistoric species!</p>
+    </article>
+</section>
+
 </body>
-
-
-<?php
-    require_once 'partials/footer.php';
-?>
-
 <script>
-    let slideIndex = 0;
+    // JavaScript for carousel functionality
+    const slides = document.querySelectorAll('.banner-slide');
+    let currentSlide = 0;
 
-    function showSlides() {
-        const slides = document.querySelectorAll('.banner-slide');
-        if (slideIndex >= slides.length) {
-            slideIndex = 0;
-        } else if (slideIndex < 0) {
-            slideIndex = slides.length - 1;
-        }
-        slides.forEach(slide => {
-            slide.style.transform = `translateX(-${slideIndex * 100}%)`;
-        });
-    }
-
-    function prevSlide() {
-        slideIndex--;
-        showSlides();
+    function showSlide(n) {
+        slides[currentSlide].style.display = 'none';
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].style.display = 'block';
     }
 
     function nextSlide() {
-        slideIndex++;
-        showSlides();
+        showSlide(currentSlide + 1);
     }
 
-    // Auto slide
-    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    setInterval(nextSlide, 3000); // Change slides every 3 seconds
 </script>
+
+<?php require_once 'partials/footer.php'; ?>
