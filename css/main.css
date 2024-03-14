@@ -13,6 +13,7 @@
     width: 300%;
     display: flex;
     transition: transform 0.5s ease;
+    
 }
 
 .banner-slide {
@@ -20,8 +21,11 @@
 }
 
 .banner-image {
-    width: 100%;
-    height: auto;
+    max-width: 100%; /* Limit the width to prevent images from overflowing */
+    max-height: 300px; /* Adjust the height to your preference */
+    width: auto; /* Let the width adjust proportionally */
+    height: auto; /* Let the height adjust proportionally */
+    object-fit: cover; /* This ensures the image covers the entire container */
 }
 
 .carousel-btn {
