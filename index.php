@@ -9,7 +9,7 @@
                 <img class="banner-image" src="img/prehistory.png" alt="Banner Image 1">
             </div>
             <div class="banner-slide">
-                <img class="banner-image" src="img/peakpx.jpg" alt="Banner Image 2">
+                <img class="banner-image" src="img/788900.jpg" alt="Banner Image 2">
             </div>
             <div class="banner-slide">
                 <img class="banner-image" src="img/peakx2.jpg" alt="Banner Image 3">

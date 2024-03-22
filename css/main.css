@@ -22,11 +22,10 @@
 
 .banner-image {
     max-width: 100%; /* Limit the width to prevent images from overflowing */
-    max-height: 300px; /* Adjust the height to your preference */
+    max-height: 500px; /* Adjust the height to your preference */
     width: 1550px; /* Let the width adjust proportionally */
-    height: 100000px; /* Let the height adjust proportionally */
+    height: auto; /* Let the height adjust proportionally */
     object-fit: cover; /* This ensures the image covers the entire container */
-    position: center;
 }
 
 .carousel-btn {
