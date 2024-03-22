@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
         <link rel="stylesheet" type="text/css" href="../css/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-        <title>items toevoegen</title>
+        <title>Items toevoegen</title>
     </head>
     <body>
     <h1>Items Toevoegen</h1>

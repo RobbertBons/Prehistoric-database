@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
         <?php
         ?>
         <form method="POST" action="delete.php">
-            <h1>Locatie verwijderen</h1>
+            <h1>Items verwijderen</h1>
             Naam:<br>
             <input type="text" name="naam"><br><br>
             
