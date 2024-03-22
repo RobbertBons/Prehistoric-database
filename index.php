@@ -12,21 +12,21 @@
                 <img class="banner-image" src="img/788900.jpg" alt="Banner Image 2">
             </div>
             <div class="banner-slide">
-                <img class="banner-image" src="img/peakx2.jpg" alt="Banner Image 3">
+                <img class="banner-image" src="img/hallucigenia_reconstruction_2017_10_11.jpg" alt="Banner Image 3">
             </div>
         </div>
     </section>
 
 <section>
     <article class='title'>
-        <h1>Welcome to Paleo Chronicle</h1>
+        <h2>Welcome to Paleo Chronicle</h2>
         <p>Explore the fascinating world of prehistoric creatures and ancient history!</p>
     </article>
 </section>
 
 <section>
     <article class='species'>
-        <h2>Featured Species</h2>
+        <h1>Featured Species</h1>
         <p>Discover the amazing diversity of prehistoric species!</p>
     </article>
 </section>

@@ -22,7 +22,7 @@
 
 .banner-image {
     max-width: 100%; /* Limit the width to prevent images from overflowing */
-    max-height: 500px; /* Adjust the height to your preference */
+    max-height: 550px; /* Adjust the height to your preference */
     width: 1550px; /* Let the width adjust proportionally */
     height: auto; /* Let the height adjust proportionally */
     object-fit: cover; /* This ensures the image covers the entire container */
@@ -49,8 +49,8 @@
 }
 .species {
     text-align : center;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 20px;
+    margin-top: 10px;
  
 }
 .title{
@@ -60,5 +60,5 @@
 }
 
 .title h2 {
-    font-size: 100px; /* Adjust the font size for h2 */
+    font-size: 25px; /* Adjust the font size for h2 */
 }
