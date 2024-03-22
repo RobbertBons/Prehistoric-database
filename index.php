@@ -47,7 +47,7 @@
         showSlide(currentSlide + 1);
     }
 
-    setInterval(nextSlide, 3000); // Change slides every 3 seconds
+    setInterval(nextSlide, 9000); // Change slides every 9 seconds
 </script>
 
 <?php require_once 'partials/footer.php'; ?>
