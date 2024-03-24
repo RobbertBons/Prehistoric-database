@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
         <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-        <title>Itemd verwijderen</title>
+        <title>Verwijderen</title>
     </head>
     <body>
         <?php

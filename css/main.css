@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    padding: 0;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-container {
+    width: 300%;
+    display: flex;
+    transition: transform 0.5s ease;
+    
+}
+
+.banner-slide {
+    flex: 1 0 100%;
+}
+
+.banner-image {
+    max-width: 100%; /* Limit the width to prevent images from overflowing */
+    max-height: 550px; /* Adjust the height to your preference */
+    width: 1550px; /* Let the width adjust proportionally */
+    height: auto; /* Let the height adjust proportionally */
+    object-fit: cover; /* This ensures the image covers the entire container */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+.species {
+    text-align : center;
+    padding: 20px;
+    margin-top: 10px;
+ 
+}
+.title{
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.title h2 {
+    font-size: 25px; /* Adjust the font size for h2 */
+}
