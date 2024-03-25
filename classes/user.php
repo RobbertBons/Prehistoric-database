@@ -1,23 +1,28 @@
 <?php
-    require_once 'dbconnect.php';
+    require_once ('dbconnect.php');
 
     class User extends DbConfig{
         private $username;
         private $password;
         public function create($data){
                 try{
+                    $this->username = $data['username'];
+                    $this->password = password_hash($data['password'], PASSWORD_BCRYPT, ["cost" => 12]);
+
                     if($data['password'] != $data['conf-password']){
                         throw new Exception("Wachtwoorden komen niet overeen.");
                     }
                     $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
-                    $encryptedPassword = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]);
-                    $stmt = $this->connect()->prepare($sql);
-                    $stmt->bindParam(":username", $data['username']);
-                    $stmt->bindParam(":password", $encryptedPassword);
+                    // $password = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]);
+                    $this->connect();
+                    $stmt = $this->conn->prepare($sql);
+                    $stmt->bindParam(":username", $this->username);
+                    $stmt->bindParam(":password", $this->password);
+                    
                     if(!$stmt->execute()){
                         throw new Exception("Account kon niet aangemaakt worden.");
                     }
-                    header("Location: login.php");
+                    // header("Location: login.php");
                 }catch(Exception $e){
                     echo $e->getMessage();
                 }
@@ -92,8 +97,6 @@
             }else {
                 header("location: gebruikers.php");
             }
-        
-        
         }
 
     }
