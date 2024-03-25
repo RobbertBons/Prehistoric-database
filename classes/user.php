@@ -4,25 +4,32 @@
     class User extends DbConfig{
         private $username;
         private $password;
+        private $firstname;
+        private $lastname;
+
         public function create($data){
                 try{
                     $this->username = $data['username'];
+                    $this->firstname = $data['firstname'];
+                    $this->lastname = $data['lastname'];
                     $this->password = password_hash($data['password'], PASSWORD_BCRYPT, ["cost" => 12]);
 
                     if($data['password'] != $data['conf-password']){
                         throw new Exception("Wachtwoorden komen niet overeen.");
                     }
-                    $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
-                    // $password = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]);
+                    $sql = "INSERT INTO users (username, password, firstname, lastname) VALUES (:username, :password, :firstname, :lastname)";
+                    $password = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]);
                     $this->connect();
                     $stmt = $this->conn->prepare($sql);
                     $stmt->bindParam(":username", $this->username);
                     $stmt->bindParam(":password", $this->password);
+                    $stmt->bindParam(":firstname", $this->firstname);
+                    $stmt->bindParam(":lastname", $this->lastname);
                     
                     if(!$stmt->execute()){
                         throw new Exception("Account kon niet aangemaakt worden.");
                     }
-                    // header("Location: login.php");
+                    header("Location: login.php");
                 }catch(Exception $e){
                     echo $e->getMessage();
                 }

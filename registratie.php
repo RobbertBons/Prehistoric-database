@@ -15,6 +15,8 @@ if(isset($_POST['register'])){
 	    	<form method="post">
 	    		<label for="username" id="username">Gebruikersnaam: </label>
 	    		<input type="text" name="username" required>
+        		voornaam:<input type="text" name="firstname">
+				achternaam:<input type="text" name="lastname">
 	    		<label for="password">Wachtwoord: </label>
 	    		<input type="password" name="password" required>
 	    		<label for="conf-password">Wachtwoord bevestiging: </label>
