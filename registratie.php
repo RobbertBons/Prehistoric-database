@@ -9,7 +9,7 @@ if(isset($_POST['register'])){
 }
 
 ?>
-
+	<link rel="stylesheet" type="text/css" href="css/login.css">
     <main>
     	<section class="form">
 	    	<form method="post">
@@ -30,3 +30,22 @@ if(isset($_POST['register'])){
 <?php
 require_once 'partials/footer.php';
 ?>
+<style>
+	.button {
+		display: inline-block;
+		padding: 10px 20px;
+		background-color:  #fed684; 
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		font-size: 16px;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+
+	.button:hover {
+		background-color: #5d7f5d; 
+		}
+</style>

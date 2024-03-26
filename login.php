@@ -44,7 +44,7 @@ require_once 'partials/footer.php';
 	.button {
 		display: inline-block;
 		padding: 10px 20px;
-		background-color:  #fed684; /* Green */
+		background-color:  #fed684; 
 		color: white;
 		text-align: center;
 		text-decoration: none;
@@ -56,7 +56,7 @@ require_once 'partials/footer.php';
 	}
 
 .button:hover {
-		background-color: #45a049; /* Darker Green */
+		background-color: #5d7f5d; 
 }
 
 </style>
