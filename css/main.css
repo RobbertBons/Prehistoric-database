@@ -62,3 +62,22 @@
 .title h2 {
     font-size: 25px; /* Adjust the font size for h2 */
 }
+.container {
+    display: flex;
+    justify-content: center; /* Center the grid container horizontally */
+    align-items: center; /* Center the grid container vertically */
+    height: 100vh; /* Ensure the container occupies full viewport height */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    grid-gap: 20px; /* Spacing between grid items */
+    justify-items: center; /* Center items horizontally within each grid cell */
+    align-items: center; /* Center items vertically within each grid cell */
+}
+
+/* Optional: Style individual articles */
+.forum, .latestnews {
+    text-align: center; /* Center text within articles */
+}

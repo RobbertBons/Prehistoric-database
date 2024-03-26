@@ -24,8 +24,20 @@
     </article>
 </section>
 
+<div class="grid-container">
+        <article class='forum'>
+            <h1>Forum</h1>
+            <p>Join our community and discussions</p>
+        </article>
+
+        <article class='latest news'>
+            <h1>Latest news</h1>
+            <p>Our newest Paleo information here</p>
+        </article>
+</div>
 
 </body>
+
 <script>
     // JavaScript for carousel functionality
     const slides = document.querySelectorAll('.banner-slide');

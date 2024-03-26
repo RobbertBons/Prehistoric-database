@@ -67,5 +67,21 @@
         font-weight: 500;
         margin-right: 20px;
     }
+    .button {
+		display: inline-block;
+		padding: 10px 20px;
+		background-color:  #fed684; 
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		font-size: 16px;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
 
+	.button:hover {
+		background-color: #808080; 
+		}
 </style>
