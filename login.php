@@ -24,7 +24,11 @@ if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
 	    		<input type="password" name="password" required>
 	    		<input type="submit" name="login" value="Login">
 	    	</form>
-	    	<a href="registratie.php">Registreren</a>
+
+			<article class="button">
+				<a href="registratie.php">Registreren</a>
+			</article>
+	    
     	</section>
     </main>
 
@@ -32,3 +36,27 @@ if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
 <?php
 require_once 'partials/footer.php';
 ?>
+
+<style>
+	body{
+		overflow-y: scroll;
+	}
+	.button {
+		display: inline-block;
+		padding: 10px 20px;
+		background-color:  #fed684; /* Green */
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		font-size: 16px;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+
+.button:hover {
+		background-color: #45a049; /* Darker Green */
+}
+
+</style>

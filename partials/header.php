@@ -6,10 +6,10 @@
             <a href="index.php">Home</a>
             <a href="">About</a>
             <a href="">Continets</a>
-            <a href="">Species</a>
-            <a href="login.php" class = 'button'>Login</a>
+            <a href="">Forum</a>
         </ul>
         <input type="text" class="search-bar" placeholder="Search">
+        <a href="login.php" class = 'button'>Login</a>
 </header>
 
 <style>
