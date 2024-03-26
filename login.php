@@ -14,7 +14,7 @@ if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
 
 
 ?>
-
+	<link rel="stylesheet" type="text/css" href="css/login.css">
     <main>
     	<section class="form">
 	    	<form method="post">

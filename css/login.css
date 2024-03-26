@@ -1,0 +1,76 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0e0e0;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #4d4d4d;
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #7a9b76;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #5d7f5d;
+}
+
+.form label {
+    color: #fed684;
+    font-weight: bold;
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.form input[type="submit"] {
+    background-color: #fed684;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #808080;
+}

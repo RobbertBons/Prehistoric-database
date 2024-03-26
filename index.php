@@ -20,16 +20,10 @@
 <section>
     <article class='title'>
         <h2>Welcome to Paleo Chronicle</h2>
-        <p>Explore the fascinating world of prehistoric creatures and ancient history!</p>
-    </article>
-</section>
-
-<section>
-    <article class='species'>
-        <h1>Featured Species</h1>
         <p>Discover the amazing diversity of prehistoric species!</p>
     </article>
 </section>
+
 
 </body>
 <script>
