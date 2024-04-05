@@ -12,7 +12,7 @@
                 <img class="banner-image" src="img/788900.jpg" alt="Banner Image 2">
             </div>
             <div class="banner-slide">
-                <img class="banner-image" src="img/hallucigenia_reconstruction_2017_10_11.jpg" alt="Banner Image 3">
+                <img class="banner-image" src="img/peakpx2.jpg" alt="Banner Image 3">
             </div>
         </div>
     </section>
