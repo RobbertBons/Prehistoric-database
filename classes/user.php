@@ -30,11 +30,20 @@
             }
         
         public function getUser($username){//piet
+            try{
             $sql = "SELECT * FROM users WHERE username = :username";
-            $stmt = $this->connect()->prepare($sql);
-            $stmt->bindParam(":username", $username);
-            $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_OBJ);
+            $this->connect();
+            $stmt = $this->conn->prepare($sql);
+            if(!$stmt->execute()){
+                throw new Exception ("");
+            }
+            $result = $stmt->fetchAll();
+            return $result;
+        }catch(Exception $e){
+            return $e->getMessage();
+        }
+
+            // return $stmt->fetch(PDO::FETCH_OBJ);
         }
 
         public function getUserById($id){
@@ -62,22 +71,53 @@
 
         public function login($data){
             try{
-                $user = $this->getUser($data['username']);
-                if(!$user){
-                    throw new Exception("Gebruiker bestaat niet.");
+                        
+                $this->username = $data['username'];
+                $this->password = $data['password'];
+    
+                $sql = "SELECT * FROM users WHERE username = :username";
+                $this->connect();
+                $stmt = $this->conn->prepare($sql);
+                $stmt->bindParam(':username', $this->username);
+            
+                if(!$stmt->execute()){
+                    throw new Exception("Er ging iets mis met het toevoegen van de user");
                 }
-                if(!password_verify($data['password'], $user->password)){
-                    throw new Exception("Wachtwoord is incorrect.");
+                $count = $stmt->rowCount();
+                if($count == 0){
+                    return "invalid";
                 }
-                session_start();
-                $_SESSION['ingelogd'] = true;
-                $_SESSION['username'] = $user->username;
-                $_SESSION['user_id'] = $user->id;
-                header("Location: backend/admin.php");
+                $user = $stmt->fetch();
+                if (password_verify( $this->password,  $user->password)) {
+                    return "valid";
+                } else {
+                    return "invalid";
+                }
+              
             }catch(Exception $e){
-                echo $e->getMessage();
+                return $e->getMessage();
             }
         }
+
+        // public function login($data){
+        //     try{
+
+        //         $user = $this->getUser($data['username']);
+        //         if(!$user){
+        //             throw new Exception("Gebruiker bestaat niet.");
+        //         }
+        //         if(!password_verify($data['password'], $user->password)){
+        //             throw new Exception("Wachtwoord is incorrect.");
+        //         }
+        //         session_start();
+        //         $_SESSION['ingelogd'] = true;
+        //         $_SESSION['username'] = $user->username;
+        //         $_SESSION['user_id'] = $user->id;
+        //         header("Location: backend/admin.php");
+        //     }catch(Exception $e){
+        //         echo $e->getMessage();
+        //     }
+        // }
 
         public function logout(){
             session_start();
