@@ -24,7 +24,7 @@
     </article>
 </section>
 
-<div class="container">
+
     <div class="grid-container">
         <article class='forum'>
             <h1>Forum</h1>
@@ -36,7 +36,7 @@
             <p>Our newest Paleo information here</p>
         </article>
     </div>
-</div>
+
 
 </body>
 
