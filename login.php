@@ -1,4 +1,5 @@
 <?php
+require_once ('partials/header.php');
 
 if(isset($_POST['submit'])){
  
