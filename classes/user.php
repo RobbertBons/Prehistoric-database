@@ -127,6 +127,7 @@
         // }
 
         public function logout(){
+            $_SESSION = null;
             session_destroy();
             header("Location: /index.php");
         }
