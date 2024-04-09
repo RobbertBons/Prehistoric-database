@@ -17,7 +17,8 @@
                     if($data['password'] != $data['conf-password']){
                         throw new Exception("Wachtwoorden komen niet overeen.");
                     }
-                    $sql = "INSERT INTO users (username, password, firstname, lastname) VALUES (:username, :password, :firstname, :lastname)";
+                    $sql = "INSERT INTO users (username, password, firstname, lastname, rol) 
+                    VALUES (:username, :password, :firstname, :lastname, 1)";
                     $password = password_hash($data['password'], PASSWORD_BCRYPT, ['cost' => 12]);
                     $this->connect();
                     $stmt = $this->conn->prepare($sql);
@@ -36,22 +37,26 @@
                 
             }
         
-        public function getUser($username){//piet
-            try{
-            $sql = "SELECT * FROM users WHERE username = :username";
-            $this->connect();
-            $stmt = $this->conn->prepare($sql);
-            if(!$stmt->execute()){
-                throw new Exception ("");
+            public function getUser($username){//piet
+                try{
+                $sql = "SELECT * FROM users WHERE username = :username";
+                $this->connect();
+                $stmt = $this->conn->prepare($sql);
+                if(!$stmt->execute()){
+                    throw new Exception ("");
+                }
+                $result = $stmt->fetchAll();
+                return $result;
+            }catch(Exception $e){
+                return $e->getMessage();
             }
-            $result = $stmt->fetchAll();
-            return $result;
-        }catch(Exception $e){
-            return $e->getMessage();
-        }
-
-            // return $stmt->fetch(PDO::FETCH_OBJ);
-        }
+    
+                // return $stmt->fetch(PDO::FETCH_OBJ);
+                $stmt = $this->connect()->prepare($sql);
+                $stmt->bindParam(":username", $username);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_OBJ);
+            }
 
         public function getUserById($id){
             $sql = "SELECT * FROM users WHERE id = :id";
@@ -78,56 +83,27 @@
 
         public function login($data){
             try{
-                        
-                $this->username = $data['username'];
-                $this->password = $data['password'];
-    
-                $sql = "SELECT * FROM users WHERE username = :username";
-                $this->connect();
-                $stmt = $this->conn->prepare($sql);
-                $stmt->bindParam(':username', $this->username);
-            
-                if(!$stmt->execute()){
-                    throw new Exception("Er ging iets mis met het toevoegen van de user");
+                $user = $this->getUser($data['username']);
+                if(!$user){
+                    throw new Exception("Gebruiker bestaat niet.");
                 }
-                $count = $stmt->rowCount();
-                if($count == 0){
-                    return "invalid";
+                if(!password_verify($data['password'], $user->password)){
+                    throw new Exception("Wachtwoord is incorrect.");
                 }
-                $user = $stmt->fetch();
-                if (password_verify( $this->password,  $user->password)) {
-                    return "valid";
-                } else {
-                    return "invalid";
-                }
-              
+                session_start();
+                $_SESSION['ingelogd'] = true;
+                $_SESSION['username'] = $user->username;
+                $_SESSION['user_id'] = $user->id;
+                header("Location: backend/admin.php");
             }catch(Exception $e){
-                return $e->getMessage();
+                echo $e->getMessage();
             }
         }
 
-        // public function login($data){
-        //     try{
-
-        //         $user = $this->getUser($data['username']);
-        //         if(!$user){
-        //             throw new Exception("Gebruiker bestaat niet.");
-        //         }
-        //         if(!password_verify($data['password'], $user->password)){
-        //             throw new Exception("Wachtwoord is incorrect.");
-        //         }
-        //         session_start();
-        //         $_SESSION['ingelogd'] = true;
-        //         $_SESSION['username'] = $user->username;
-        //         $_SESSION['user_id'] = $user->id;
-        //         header("Location: backend/admin.php");
-        //     }catch(Exception $e){
-        //         echo $e->getMessage();
-        //     }
-        // }
-
         public function logout(){
+            session_start();
             $_SESSION = null;
+            session_unset();
             session_destroy();
             header("Location: /index.php");
         }
