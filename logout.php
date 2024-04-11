@@ -1,6 +1,7 @@
 <?php
 require_once 'partials/header.php';
-$user->logout();
+
+$gebruiker->logout();
 ?>
 
 <?php

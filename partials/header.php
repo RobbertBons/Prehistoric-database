@@ -10,8 +10,9 @@
         </ul>
         <input type="text" class="search-bar" placeholder="Search">
         <a href="login.php" class = 'button'>Login</a>
-        <?php if(isset($_SESSION['ingelogd']) && $_SESSION['loggedIn']){ ?>
         <a href="logout.php" class = 'button'>Logout</a>
+        <?php if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){ ?>
+        
         <?php }else{ ?>
         <?php } if(isset($_SESSION['rol']) && $_SESSION['rol'] == 1)?>
 </header>
