@@ -41,7 +41,8 @@
         align-items: center; /* Vertically center the content */
     }
 
-.nav li {
+    
+    .nav li {
         margin-right: 20px; /* Add spacing between nav items */
     }
     
@@ -51,6 +52,11 @@
         font-size: 18px;
         font-weight: 500;
         margin-right: 20px;
+    }
+    
+    /* New CSS for hover effect */
+    .nav a:hover {
+        color: white; /* Change text color to white on hover */
     }
     .button {
 		display: inline-block;

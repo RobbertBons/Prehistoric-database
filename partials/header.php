@@ -1,6 +1,6 @@
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/header.css">
+<link rel="stylesheet" type="text/css" href="css/header.css">
 </head>
 
 <header class="header">
@@ -10,8 +10,18 @@
             <a href="">About</a>
             <a href="">Continets</a>
             <a href="">Forum</a>
+ 
         </ul>
         <input type="text" class="search-bar" placeholder="Search">
-        <a href="login.php" class = 'button'>Login</a>
-        <a href="logout.php" class = 'button'>Logout</a>
+        
+        <?php
+        session_start();
+        if (!empty($_SESSION['username'])) {
+            echo 'Welkom ' . $_SESSION['username'] . ', je activiteiten worden bijgehouden.';
+            // If the user is logged in, show the logout button
+            echo '<a href="logout.php" class="button">Logout</a>';
+        } else {
+            echo '<a href="login.php" class="button">Login</a>';
+        }
+        ?>
 </header>
