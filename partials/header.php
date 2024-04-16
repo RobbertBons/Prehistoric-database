@@ -40,34 +40,39 @@
     border: 1px solid #ccc; /* Add a border for better visibility */
 }
 
-.header{
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px 100px;
-        background-color: #fed684;
-        display: flex;
-        align-items: center; /* Vertically center the content */
-        justify-content: space-between;
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: #fed684;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between;
 }
 
 .nav {
-        list-style: none; /* Remove default list styles */
-        display: flex;
-        align-items: center; /* Vertically center the content */
-    }
+    list-style: none; /* Remove default list styles */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+}
 
 .nav li {
-        margin-right: 20px; /* Add spacing between nav items */
-    }
-    
-    .nav a {
-        text-decoration: none;
-        color: 	#808080;
-        font-size: 18px;
-        font-weight: 500;
-        margin-right: 20px;
-    }
+    margin-right: 20px; /* Add spacing between nav items */
+}
+
+.nav a {
+    text-decoration: none;
+    color: 	#808080;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+/* New CSS for hover effect */
+.nav a:hover {
+    color: white; /* Change text color to white on hover */
+}
     .button {
 		display: inline-block;
 		padding: 10px 20px;
