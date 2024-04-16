@@ -8,9 +8,6 @@
 
 <article class="text">
     <?php
-    // Start the session
-    session_start();
-
     // Check if the username session variable is set
     if (!empty($_SESSION['username'])) {
         // Display the welcome message
