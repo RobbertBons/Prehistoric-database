@@ -10,18 +10,21 @@
             <a href="">About</a>
             <a href="">Continets</a>
             <a href="">Forum</a>
+
  
         </ul>
-        <input type="text" class="search-bar" placeholder="Search">
-        
-        <?php
-        session_start();
-        if (!empty($_SESSION['username'])) {
-            echo 'Welkom ' . $_SESSION['username'] . ', je activiteiten worden bijgehouden.';
-            // If the user is logged in, show the logout button
-            echo '<a href="logout.php" class="button">Logout</a>';
-        } else {
-            echo '<a href="login.php" class="button">Login</a>';
-        }
-        ?>
+            <input type="text" class="search-bar" placeholder="Search">
+        <ul>
+            <?php
+            session_start();
+            if (!empty($_SESSION['username'])) {
+                // If the user is logged in, show the logout button
+                echo '<a href="Account.php" class="button"><i class="fas fa-user"></i></a>';
+                echo '<a href="logout.php" class="button">Logout</a>';
+               
+            } else {
+                echo '<a href="login.php" class="button">Login</a>';
+            }
+            ?>
+        </ul>
 </header>

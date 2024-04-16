@@ -13,22 +13,6 @@ if(isset($_POST['submit'])){
         $melding = "login gegevens incorrect";
     }
 }
-
-
-// require_once ('partials/header.php');
-// require_once ('classes/user.php');
-
-// $user = new User();
-
-// if(isset($_POST['login'])){
-// 	echo $user->login($_POST);
-// }
-// session_start();
-// if(isset($_SESSION['ingelogd']) && $_SESSION['ingelogd']){
-// 	header("Location: ./index.php");
-// }
-
-
 ?>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
     <main>
@@ -40,7 +24,7 @@ if(isset($_POST['submit'])){
 	    		<input type="password" name="password" required><!-- test -->
 	    		<input type="submit" name="submit" value="Login">
 	    	</form>
-
+			<br>
 			<article class="button">
 				<a href="registratie.php">Registreren</a>
 			</article>
