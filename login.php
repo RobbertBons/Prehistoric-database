@@ -14,11 +14,6 @@ if(isset($_POST['submit'])){
     }
 }
 
-if(isset($_SESSION['ingelogd'])){
-	if($_SESSION['ingelogd']){
-		header("Location: index.php");
-	}
-}
 
 // require_once ('partials/header.php');
 // require_once ('classes/user.php');
