@@ -11,7 +11,6 @@
             <a href="">Continets</a>
             <a href="">Forum</a>
 
- 
         </ul>
             <input type="text" class="search-bar" placeholder="Search">
         <ul>
@@ -20,7 +19,9 @@
             if (!empty($_SESSION['username'])) {
                 // If the user is logged in, show the logout button
                 echo '<a href="Account.php" class="button"><i class="fas fa-user"></i></a>';
+                echo '<a href="Admin.php" class="button">Admin panel</a>';
                 echo '<a href="logout.php" class="button">Logout</a>';
+               
                
             } else {
                 echo '<a href="login.php" class="button">Login</a>';
