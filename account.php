@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/Account.css">
 </head>
 
-<article class="text">
+<article class="title">
     <?php
     // Check if the username session variable is set
     if (!empty($_SESSION['username'])) {
@@ -33,6 +33,7 @@
     }
     ?>
 </article>
+
 
 <?php
     require_once ('partials/footer.php');
