@@ -11,5 +11,5 @@
   <a href="items/add.php" class="button">Add</a>
   <a href="items/delete.php" class="button">delete</a>
   <a href="items/show.php" class="button">show</a>
-  <a href="items/edit.php" class="button">delete</a>
+  <a href="items/edit.php" class="button">edit</a>
 </div>
