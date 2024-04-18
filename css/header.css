@@ -1,77 +1,103 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
-.button{
-    border-radius: 10;
-}
-
-.logo{
+.logo {
     width: 15%;
     height: auto;
     text-decoration: none;
-    color: 	#808080;
+    color: #808080;
     font-size: 18px;
     font-weight: 500;
-    margin-right: 190px;
-}
-.search-bar {
-    padding: 4px 5px; /* Adjust padding as needed */
-    border-radius: 5px; /* Add some border-radius for rounded corners */
-    border: 1px solid #ccc; /* Add a border for better visibility */
+    margin-right: 20px; /* Reduce margin for smaller screens */
 }
 
-.header{
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px 100px;
-        background-color: #fed684;
-        display: flex;
-        align-items: center; /* Vertically center the content */
-        justify-content: space-between;
+.search-bar {
+    padding: 8px 10px; /* Increase padding for smaller screens */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.header {
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+    background-color: #fed684;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav {
-        list-style: none; /* Remove default list styles */
-        display: flex;
-        align-items: center; /* Vertically center the content */
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav li {
+    margin-right: 10px; /* Reduce margin for smaller screens */
+}
+
+.nav a {
+    text-decoration: none;
+    color: #808080;
+    font-size: 16px; /* Reduce font size for smaller screens */
+    font-weight: 500;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 16px; /* Increase padding for smaller screens */
+    background-color: #fed684;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px; /* Reduce font size for smaller screens */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #808080;
+}
+
+/* Media queries for tablet */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 5px; /* Adjust padding for tablet screens */
     }
 
-    
-    .nav li {
-        margin-right: 20px; /* Add spacing between nav items */
-    }
-    
     .nav a {
-        text-decoration: none;
-        color: 	#808080;
-        font-size: 18px;
-        font-weight: 500;
-        margin-right: 20px;
+        font-size: 14px; /* Reduce font size for tablet screens */
     }
-    
-    /* New CSS for hover effect */
-    .nav a:hover {
-        color: white; /* Change text color to white on hover */
-    }
-    .button {
-		display: inline-block;
-		padding: 10px 20px;
-		background-color:  #fed684; 
-		color: white;
-		text-align: center;
-		text-decoration: none;
-		font-size: 16px;
-		border-radius: 5px;
-		border: none;
-		cursor: pointer;
-		transition: background-color 0.3s;
-	}
+}
 
-	.button:hover {
-		background-color: #808080; 
-		}
+/* Media queries for mobile */
+@media (max-width: 480px) {
+    .logo {
+        width: 30%; /* Adjust logo size for mobile screens */
+    }
+
+    .search-bar {
+        width: 60%; /* Adjust search bar width for mobile screens */
+    }
+
+    .nav {
+        flex-direction: column; /* Stack nav items vertically for mobile screens */
+        align-items: flex-start; /* Align nav items to the start for mobile screens */
+    }
+
+    .nav li {
+        margin-right: 0; /* Remove margin between nav items for mobile screens */
+        margin-bottom: 10px; /* Add margin bottom to separate nav items for mobile screens */
+    }
+
+    .button {
+        display: block;
+        width: 100%; /* Make buttons full width for mobile screens */
+        margin-bottom: 10px; /* Add margin bottom to separate buttons for mobile screens */
+    }
+}
