@@ -1,0 +1,7 @@
+.title{
+    align-items: center;
+}
+.button-grid {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+  }

@@ -29,21 +29,20 @@
     justify-content: space-between;
 }
 
-.nav {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
 .nav li {
-    margin-right: 10px; /* Reduce margin for smaller screens */
+    margin-right: 20px; /* Reduce margin for smaller screens */
 }
 
 .nav a {
     text-decoration: none;
-    color: #808080;
+    color: white;
     font-size: 16px; /* Reduce font size for smaller screens */
     font-weight: 500;
+    padding: 0 10px; /* Add space around the links */
+    transition: background-color 0.3s;
+}
+.nav a:hover {
+    background-color: #808080;
 }
 
 .button {
@@ -58,46 +57,11 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 10vw;
 }
 
 .button:hover {
     background-color: #808080;
 }
 
-/* Media queries for tablet */
-@media (max-width: 768px) {
-    .header {
-        padding: 20px 5px; /* Adjust padding for tablet screens */
-    }
 
-    .nav a {
-        font-size: 14px; /* Reduce font size for tablet screens */
-    }
-}
-
-/* Media queries for mobile */
-@media (max-width: 480px) {
-    .logo {
-        width: 30%; /* Adjust logo size for mobile screens */
-    }
-
-    .search-bar {
-        width: 60%; /* Adjust search bar width for mobile screens */
-    }
-
-    .nav {
-        flex-direction: column; /* Stack nav items vertically for mobile screens */
-        align-items: flex-start; /* Align nav items to the start for mobile screens */
-    }
-
-    .nav li {
-        margin-right: 0; /* Remove margin between nav items for mobile screens */
-        margin-bottom: 10px; /* Add margin bottom to separate nav items for mobile screens */
-    }
-
-    .button {
-        display: block;
-        width: 100%; /* Make buttons full width for mobile screens */
-        margin-bottom: 10px; /* Add margin bottom to separate buttons for mobile screens */
-    }
-}

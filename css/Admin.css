@@ -1,26 +1,16 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 
 .title{
     text-align: center;
 }
 
-.grid-container {
+
+.button-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
-    grid-gap: 20px; /* Spacing between grid items */
-}
-
-.creatures,
-.users {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; 
     align-items: center;
-}
-
-.button {
-    margin-bottom: 10px; /* Adjust spacing between buttons */
-    align-items: center;
-}
+  }
+  
+  .button:hover {
+    background-color: #808080
+  }

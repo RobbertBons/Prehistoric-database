@@ -10,33 +10,16 @@ require_once 'partials/header.php';
     <h2>Admin panel</h2>
 </section>
 
-<section class ="container">
-    <section class="grid-container">
-        <article class="creatures">
-            <h1>Creatures or plants display</h1>
-        </article>
-        
-        <article class="button-container">
-            <a href="items/add.php" class="button">Add</a>
-        </article>
+<div class="button-grid">
+  <a href="Items.php" class="button">Creatures</a>
+  <a href="logout.php" class="button">Users</a>
+  <a href="logout.php" class="button">Posts</a>
+  <a href="logout.php" class="button">Catogories</a>
+</div>
 
-        <article class="button-container">
-            <a href="items/delete.php" class="button">Delete</a>
-        </article>
-
-        <article class="button-container">
-            <a href="items/show.php" class="button">Show</a>
-        </article>
-
-        <article class="button-container">
-            <a href="items/edit.php" class="button">Edit</a>
-        </article>
-    </section>
-
-    <section class="grid-container">
-        <h1>User display</h1>
     </section>
 </section>
+
 
 <?php
 require_once 'partials/footer.php'
