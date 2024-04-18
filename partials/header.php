@@ -19,7 +19,6 @@
             if (!empty($_SESSION['username'])) {
                 // If the user is logged in, show the logout button
                 echo '<a href="Account.php" class="button"><i class="fas fa-user"></i></a>';
-                echo '<a href="Admin.php" class="button">Admin panel</a>';
                 echo '<a href="logout.php" class="button">Logout</a>';
                
                

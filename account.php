@@ -32,6 +32,7 @@
         exit; // Terminate the script to prevent further execution
     }
     ?>
+    <a href="Admin.php" class="button">Admin panel</a>
 </article>
 
 
