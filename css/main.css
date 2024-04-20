@@ -40,13 +40,6 @@
     outline: none;
 }
 
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
-}
 .species {
     text-align : center;
     padding: 20px;
