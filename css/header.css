@@ -57,7 +57,7 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 10vw;
+    width: 8vw;
 }
 
 .button:hover {
