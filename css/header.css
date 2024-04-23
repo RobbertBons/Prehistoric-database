@@ -64,4 +64,39 @@
     background-color: #808080;
 }
 
+.button-container-admin {
+    display: flex;
+  }
+  
+  .button-admin {
+    flex: 1;
+    background-color: #fed684;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-admin:hover {
+    background-color: #808080;
+  }
+  .button-admin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width /
+    gap: 10px; / Gap between buttons */
+  }
+  
+  .button-admin {
+    background-color: #fed684;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-admin:hover {
+    background-color: #808080;
+  }
 

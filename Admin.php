@@ -10,11 +10,11 @@ require_once 'partials/header.php';
     <h2>Admin panel</h2>
 </section>
 
-<div class="button-grid">
-  <a href="Items.php" class="button">Creatures</a>
-  <a href="logout.php" class="button">Users</a>
-  <a href="logout.php" class="button">Posts</a>
-  <a href="logout.php" class="button">Catogories</a>
+<div class="button-container-admin">
+  <button class="button-admin">Button 1</button>
+  <div class="button-admin">Button 2</div>
+  <div class="button-admin">Button 3</div>
+  <div class="button-admin">Button 4</div>
 </div>
 
     </section>
