@@ -35,43 +35,7 @@
     <div class="button">Button 4</div>
 </div>
 
-<style>
-  .title {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100px; /* Set a specific height for the title section */
-  }
-
-  .title h1 {
-    margin: 0; /* Remove default margin */
-  }
-
-  .button-container {
-    display: grid;
-    grid-template-columns: repeat(6, 3fr);
-    grid-template-rows: auto auto; /* Each row will adjust to its content */
-    grid-gap: 10px; /* Adjust the gap as needed */
-  }
-
-  .button {
-    background-color: green;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .button:hover {
-    background-color: #808080;
-  }
-
-  /* Centering the h1 within button-container */
-  .button-container h1 {
-    text-align: center;
-    margin: 0; /* Remove default margin */
-  }
-</style>
-
-
+    <article class="users">
+        <h1>User display</h1>
+    </article>
+</section>
