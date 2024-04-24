@@ -5,7 +5,11 @@
         private $naam;
 
         public function addrol(){
+            try{
+                $this->naam = $naam;
+            }catch{
 
+            }
         }
         public function deleterol(){
 

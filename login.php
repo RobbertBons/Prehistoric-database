@@ -5,7 +5,7 @@ if(isset($_POST['submit'])){
  
     require_once ("classes/user.php");
     $gebruiker = new User();
-    session_start();
+	
     if($gebruiker->login($_POST) == "valid"){
         $_SESSION['ingelogd'] = true;
         header("Location: index.php");
