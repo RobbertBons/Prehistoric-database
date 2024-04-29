@@ -39,17 +39,17 @@
 </section>
 
 <style>
-  .title {
+.title {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     height: 100px; /* Set a specific height for the title section */
-  }
+}
 
-  .title h1 {
+.title h1 {
     margin: 0; /* Remove default margin */
-  }
-  .grid-container {
+}
+.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px; /* Adjust the grid gap to add space between grid items */
@@ -63,7 +63,9 @@
     margin-bottom: 20px; /* Add margin to create space between button containers */
 }
 
-
+.button-container h2 {
+    text-align: center; /* Center the text horizontally */
+}
 
 .button-container:nth-child(2n) {
     grid-row: 2;
@@ -76,15 +78,9 @@
     padding: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
+}
 
-  .button:hover {
+.button:hover {
     background-color: #808080;
-  }
-
-  /* Centering the h1 within button-container */
-  .button-container h1 {
-    text-align: center;
-    margin: 0; /* Remove default margin */
-  }
+}
 </style>
