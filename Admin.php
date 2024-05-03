@@ -7,33 +7,17 @@
 </section>
 
 <section class="grid-container">
-    <h2>creature/plant display</h2>  
     <div class="button-container">
-        <a href="items/add.php" class="button">Add</a>
-        <a href="items/delete.php" class="button">Delete</a>
-        <a href="items/edit.php" class="button">Edit</a>
-        <a href="items/show.php" class="button">Show</a>
+        <a href="Items.php" class="button">Creatures or plants</a>
     </div>
-    <h2>user display</h2>
     <div class="button-container">
-        <div class="button">Button 1</div>
-        <div class="button">Button 2</div>
-        <div class="button">Button 3</div>
-        <div class="button">Button 4</div>
+        <div class="button">User display</div>
     </div>
-    <h2>category display</h2>
     <div class="button-container">
-        <div class="button">Button 1</div>
-        <div class="button">Button 2</div>
-        <div class="button">Button 3</div>
-        <div class="button">Button 4</div>
+        <div class="button">Category</div>
     </div>
-    <h2>posts display</h2>
     <div class="button-container">
-        <div class="button">Button 1</div>
-        <div class="button">Button 2</div>
-        <div class="button">Button 3</div>
-        <div class="button">Button 4</div>
+        <div class="button">Posts</div>
     </div>
 
 </section>
@@ -51,16 +35,15 @@
   }
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px; /* Adjust the grid gap to add space between grid items */
+    grid-gap: 5px; /* Adjust the grid gap to add space between grid items */
 }
 
 .button-container {
     display: grid;
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(1, 2fr);
     align-items: center;
     justify-items: center; /* Center horizontally */
-    margin-bottom: 20px; /* Add margin to create space between button containers */
+    margin-bottom: 10px; /* Add margin to create space between button containers */
 }
 
 
@@ -76,6 +59,7 @@
     padding: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 10px;
   }
 
   .button:hover {
@@ -83,8 +67,11 @@
   }
 
   /* Centering the h1 within button-container */
-  .button-container h1 {
+  .button-container h2 {
     text-align: center;
     margin: 0; /* Remove default margin */
+  }
+  h2 {
+    align-items: center;
   }
 </style>
