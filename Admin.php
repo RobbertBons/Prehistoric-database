@@ -23,17 +23,17 @@
 </section>
 
 <style>
-  .title {
+.title {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     height: 100px; /* Set a specific height for the title section */
-  }
+}
 
-  .title h1 {
+.title h1 {
     margin: 0; /* Remove default margin */
-  }
-  .grid-container {
+}
+.grid-container {
     display: grid;
     grid-gap: 5px; /* Adjust the grid gap to add space between grid items */
 }
@@ -46,7 +46,9 @@
     margin-bottom: 10px; /* Add margin to create space between button containers */
 }
 
-
+.button-container h2 {
+    text-align: center; /* Center the text horizontally */
+}
 
 .button-container:nth-child(2n) {
     grid-row: 2;
@@ -62,7 +64,7 @@
     border-radius: 10px;
   }
 
-  .button:hover {
+.button:hover {
     background-color: #808080;
   }
 
