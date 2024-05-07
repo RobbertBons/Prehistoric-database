@@ -12,7 +12,6 @@
             <a href="">Forum</a>
 
         </ul>
-            <input type="text" class="search-bar" placeholder="Search">
         <ul>
             <?php
             session_start();
