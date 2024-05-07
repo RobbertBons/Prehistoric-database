@@ -8,8 +8,9 @@
         <ul class ="nav">
             <a href="index.php">Home</a>
             <a href="">About</a>
-            <a href="">Continets</a>
             <a href="">Forum</a>
+            <a href="">Games</a>
+            <a href="">Paleo+</a>
 
         </ul>
             <input type="text" class="search-bar" placeholder="Search">
