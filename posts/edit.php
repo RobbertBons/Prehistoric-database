@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
     </head>
     <body>
         <form method="POST" action="edit.php?id=">
-            <h1>Oude gegevens</h1>
+            <h1>Edit</h1>
             title:<br>
             <input type="text" name="title"><br><br>
             Description:<br>
