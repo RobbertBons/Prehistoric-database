@@ -26,14 +26,14 @@ require_once ("../classes/post.php");
         <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-        <title>Alle Post</title>
+        <title>All Post</title>
     </head>
     <body>
         <?php
         foreach( $posts as $post){
-            echo $post->title. " " .$post->beschrijving. " " ."<a href='edit.php?id=".$post->id."'>edit</a> 
+            echo $post->title. " " .$post->beschrijving. " " ."<a href='edit.php?postID =".$post->postID."'>edit</a> 
             <form method='POST'>
-            <button name='delete' type='submit' value=$post->id> Delete</button>
+            <button name='delete' type='submit' value=$post->postID> Delete</button>
             </form><br>";
         }
         ?>
