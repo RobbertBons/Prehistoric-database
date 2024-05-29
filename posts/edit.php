@@ -25,14 +25,14 @@ if(isset($_POST['submit'])){
         <title>Post Updaten</title>
     </head>
     <body>
-        <form method="POST" action="edit.php?id=">
+        <form method="POST" action="edit.php?postID=">
             <h1>Edit</h1>
             title:<br>
             <input type="text" name="title"><br><br>
             Description:<br>
             <input type="text" name="beschrijving"><br><br>
             
-            <input type="hidden" value="<?php echo $_GET['id'];?>" name="id">
+            <input type="hidden" value="<?php echo $_GET['postID'];?>" name="postID">
 
             <input type="submit" name="submit">
 

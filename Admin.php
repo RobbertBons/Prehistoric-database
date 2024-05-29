@@ -17,7 +17,7 @@
         <div class="button">Category</div>
     </div>
     <div class="button-container">
-        <a href="post.php" class="button">Posts</a>
+        <a href="posts/show.php" class="button">Posts</a>
     </div>
 
 </section>
