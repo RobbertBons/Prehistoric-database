@@ -1,39 +1,39 @@
 <?php
  require_once 'partials/AdminHeader.php';
 ?>
-
-<section class="title">
-    <h1>Admin panel</h1>
-</section>
-
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<article class="title">
+    <h2>Post display</h2>
+</article>
 <section class="grid-container">
     <div class="button-container">
-        <a href="Items.php" class="button">Creatures or plants</a>
+        <a href="posts/add.php" class="button">add post</a>
     </div>
     <div class="button-container">
-        <div class="button">User display</div>
+    <a href="posts/delete.php" class="button">delete post</a>
     </div>
     <div class="button-container">
-        <div class="button">Category</div>
+        <a href="posts/edit.php" class="button">edit post</a>
     </div>
     <div class="button-container">
-        <a href="posts/show.php" class="button">Posts</a>
+        <a href="posts/show.php" class="button">show post</a>
     </div>
-
 </section>
 
 <style>
-.title {
+  .title {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     height: 100px; /* Set a specific height for the title section */
-}
+  }
 
-.title h1 {
+  .title h1 {
     margin: 0; /* Remove default margin */
-}
-.grid-container {
+  }
+  .grid-container {
     display: grid;
     grid-gap: 5px; /* Adjust the grid gap to add space between grid items */
 }
@@ -46,9 +46,7 @@
     margin-bottom: 10px; /* Add margin to create space between button containers */
 }
 
-.button-container h2 {
-    text-align: center; /* Center the text horizontally */
-}
+
 
 .button-container:nth-child(2n) {
     grid-row: 2;
@@ -64,7 +62,7 @@
     border-radius: 10px;
   }
 
-.button:hover {
+  .button:hover {
     background-color: #808080;
   }
 
@@ -77,3 +75,4 @@
     align-items: center;
   }
 </style>
+
