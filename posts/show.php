@@ -34,9 +34,12 @@ require_once ("../classes/post.php");
             <h1>Posts</h1>
         </header>
 
-       <main> 
-            <ul class="post-list">
-                <?php foreach ($posts as $post): ?>
+        <main>
+            <ul id="post-list" class="post-list">
+                <?php 
+                $postCount = 0; 
+                foreach ($posts as $post): 
+                ?>
                     <li class="post-item">
                         <div class="post-title"><?php echo htmlspecialchars($post->title); ?></div>
                         <div class="post-description"><?php echo htmlspecialchars($post->beschrijving); ?></div>
@@ -47,15 +50,46 @@ require_once ("../classes/post.php");
                             </form>
                         </div>
                     </li>
+                    <?php 
+                    $postCount++;
+                    if ($postCount >= 12) break; // Limit to 12 posts
+                    ?>
                 <?php endforeach; ?>
-                    <div class="button-container">
-                        <a href="add.php" class="button">add post</a>
-                        <a href="../Admin.php" class="button">back to admin panel</a>
-                    </div>
             </ul>
+            
+            <div class="button-container">
+                <a href="add.php" class="button">add post</a>
+                <a href="../Admin.php" class="button">back to admin panel</a>
+                <?php if ($postCount >= 12): ?>
+                    <button id="next-btn" class="button" onclick="loadNextPage()">Next</button>
+                <?php endif; ?>
+            </div>
         </main>
     </body>
+        <script>
+            var page = 1; // Initialize page number
 
+            function loadNextPage() {
+                // Increment page number
+                page++;
+
+                // Send an AJAX request to load more posts
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+                        if (xhr.status == 200) {
+                            // Replace the existing list with new posts
+                            var postList = document.getElementById('post-list');
+                            postList.innerHTML = xhr.responseText;
+                        } else {
+                            console.error('Error loading next page.');
+                        }
+                    }
+                };
+                xhr.open('GET', 'load_more_posts.php?page=' + page);
+                xhr.send();
+            }
+        </script>         
     <style>
         body {
             font-family: 'Roboto Mono', monospace;
@@ -91,14 +125,16 @@ require_once ("../classes/post.php");
             background-color: #218838;
         }
         .post-list {
-            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
             padding: 0;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 20px auto;
+            list-style-type: none;
         }
         .post-item {
             background-color: #fff;
-            margin: 10px 0;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -134,6 +170,42 @@ require_once ("../classes/post.php");
         }
         .post-actions a:hover, .post-actions button:hover {
             opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .post-title {
+                font-size: 1.3em;
+            }
+            .post-description {
+                font-size: 0.9em;
+            }
+            .post-actions a, .post-actions button {
+                padding: 8px 5px;
+                font-size: 0.9em;
+            }
+            .button {
+                padding: 4px 5px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .post-title {
+                font-size: 1.1em;
+            }
+            .post-description {
+                font-size: 0.8em;
+            }
+            .post-actions {
+                flex-direction: column;
+            }
+            .post-actions a, .post-actions button {
+                width: 100%;
+                text-align: center;
+            }
+            .button {
+                padding: 8px 12px;
+                font-size: 0.8em;
+            }
         }
     </style>
 </html>
