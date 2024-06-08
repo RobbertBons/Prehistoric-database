@@ -60,6 +60,8 @@ class Post extends Dbconfig {
             return "{$this->title} <br> {$this->beschrijving} zijn uw nieuwe gegevens";
 
         } catch (Exception $e) {
+            // Log error to a file or database
+            error_log($e->getMessage(), 3, '/var/log/app_errors.log');  // Example log path
             return $e->getMessage();
         }
     }
