@@ -27,22 +27,23 @@ if(isset($_POST['submit'])){
     </head>
     <body>
     <div class="container">
-    <h2>Edit Post</h2>
-        <form method="POST" action="edit.php?postID=">
-                <h1>Oude gegevens</h1>
-                Title:<br>
-                <input type="text" name="title"><br><br>
-                Description:<br>
-                <input type="text" name="beschrijving"><br><br>
-                
-                <input type="hidden" value="<?php echo $_GET['postID'];?>" name="postID">
-
-                <input type="submit" name="submit">
-
-            <!-- <h1>Terug naar <a href="../index.php">Home</a></h1> -->
+        <h2>Edit Post</h2>
+        <form method="POST" action="edit.php?postID=<?php echo htmlspecialchars($_GET['postID']); ?>">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title" value="<?php echo htmlspecialchars(isset($title) ? $title : ''); ?>">
+            </div>
+            <div class="form-group">
+                <label for="beschrijving">Description:</label>
+                <input type="text" name="beschrijving" id="beschrijving" value="<?php echo htmlspecialchars(isset($description) ? $description : ''); ?>">
+            </div>
+            <input type="hidden" value="<?php echo htmlspecialchars($_GET['postID']); ?>" name="postID">
+            <div class="form-group">
+                <input type="submit" name="submit" value="Submit">
+            </div>
         </form>
-</div>
-    </body>
+    </div>
+</body>
     <style>
         body {
             font-family: Arial, sans-serif;
