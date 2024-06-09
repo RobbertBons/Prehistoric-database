@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .banner {
     width: 100%;
     overflow: hidden;
@@ -73,4 +79,16 @@
 /* Optional: Style individual articles */
 .forum, .latestnews {
     text-align: center; /* Center text within articles */
+}
+
+/* Wrapper to take up remaining space */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Flex-grow makes the main content area take up remaining space */
+.wrapper > * {
+    flex: 1;
 }
