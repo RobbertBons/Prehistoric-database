@@ -72,10 +72,25 @@ class Item extends Dbconfig {
             $stmt->bindParam(':id', $data['id']);
 
             if (!$stmt->execute()) {
-                throw new Exception("Er ging iets mis met het updaten van de post");
+                throw new Exception("Er ging iets mis met het updaten van items");
             }
             return "{$this->naam} <br> {$this->beschrijving} <br> {$this->diet} <br> {$this->lengte} <br> {$this->geleefd} <br> zijn uw nieuwe gegevens";
         
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+    public function getItemById($id) {
+        try {
+            $sql = "SELECT * FROM items WHERE id = :id"; 
+            $this->connect();
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':id', $id);
+            if (!$stmt->execute()) {
+                throw new Exception("Er ging iets mis met het ophalen van items");
+            }
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
         } catch (Exception $e) {
             return $e->getMessage();
         }

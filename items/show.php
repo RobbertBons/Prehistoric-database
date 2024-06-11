@@ -68,7 +68,7 @@ $items = $item->showItems();
                 <?php endforeach; ?>
             </ul>
             <div class="button-container">
-                <a href="add.php" class="button">Add Item</a>
+                <a href="add.php" class="button">Add Creature or plant</a>
                 <a href="../Admin.php" class="button">Back to Admin Panel</a>
                 <?php if ($itemCount >= 12): ?>
                     <button id="next-btn" class="button" onclick="loadNextPage()">Next</button>
