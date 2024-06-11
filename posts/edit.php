@@ -1,18 +1,29 @@
 <?php
-// session_start();
-// if( $_SESSION['ingelogd'] != true){
-//     header("Location: ../login.php");
-        //exit();
-// }
-if(isset($_POST['submit'])){
-    require_once ("../classes/dbconnect.php");
-    require_once ("../classes/post.php");
-    $post = new post();
-    $post->editPost($_POST);
-    header("location: show.php");
-    exit();
+require_once ("../classes/dbconnect.php");
+require_once ("../classes/post.php");
+
+// Retrieve post data if postID is set in the query string
+if (isset($_GET['postID'])) {
+    $postID = $_GET['postID'];
+    $post = new Post();
+    $postData = $post->getPostById($postID);
+
+    if ($postData) {
+        $title = $postData['title'];
+        $beschrijving = $postData['beschrijving'];
+    } else {
+        echo "Post not found.";
+        exit();
+    }
 }
 
+// Handle form submission
+if (isset($_POST['submit'])) {
+    $post = new Post();
+    $post->editPost($_POST);
+    header("Location: show.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -31,11 +42,11 @@ if(isset($_POST['submit'])){
             <form method="POST" action="edit.php?postID=<?php echo $postID; ?>">
                 <div class="form-group">
                     <label for="title">Title:</label>
-                    <input type="text" name="title" id="title" value="<?php echo isset($title) ? $title : ''; ?>">
+                    <input type="text" name="title" id="title" value="<?php echo isset($title) ? htmlspecialchars($title) : ''; ?>">
                 </div>
-                <div class="form-group">
+                <div class="form-desc">
                     <label for="beschrijving">Description:</label>
-                    <input type="text" name="beschrijving" id="beschrijving" value="<?php echo isset($description) ? $description : ''; ?>">
+                    <textarea name="beschrijving" id="beschrijving"><?php echo isset($beschrijving) ? htmlspecialchars($beschrijving) : ''; ?></textarea>
                 </div>
                 <input type="hidden" value="<?php echo $postID; ?>" name="postID">
                 <div class="form-group">
@@ -44,6 +55,7 @@ if(isset($_POST['submit'])){
             </form>
         </div>
     </body>
+</html>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,7 +66,7 @@ if(isset($_POST['submit'])){
         .container {
             max-width: 400px;
             margin: 50px auto;
-            padding: 20px;
+            padding: 50px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -85,6 +97,30 @@ if(isset($_POST['submit'])){
             background-color: #007bff;
             color: #fff;
             cursor: pointer;
+        }
+        .form-desc input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            height: 50vh;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-desc input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        .form-desc label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-desc {
+            margin-bottom: 20px;
         }
         .form-group input[type="submit"]:hover {
             background-color: #0056b3;

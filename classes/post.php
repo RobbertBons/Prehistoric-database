@@ -57,8 +57,25 @@ class Post extends Dbconfig {
             if (!$stmt->execute()) {
                 throw new Exception("Er ging iets mis met het updaten van de post");
             }
+
             return "{$this->title} <br> {$this->beschrijving} zijn uw nieuwe gegevens";
 
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function getPostById($postID) {
+        try {
+            $sql = "SELECT * FROM post WHERE postID = :postID"; 
+            $this->connect();
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':postID', $postID);
+            if (!$stmt->execute()) {
+                throw new Exception("Er ging iets mis met het ophalen van de post");
+            }
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
         } catch (Exception $e) {
             return $e->getMessage();
         }
