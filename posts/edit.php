@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="form-group">
                     <label for="beschrijving">Description:</label>
-                    <input type="text" name="beschrijving" id="beschrijving" value="<?php echo isset($description) ? $description : ''; ?>">
+                    <textarea name="beschrijving" id="beschrijving"><?php echo isset($beschrijving) ? htmlspecialchars($beschrijving) : ''; ?></textarea>
                 </div>
                 <input type="hidden" value="<?php echo $postID; ?>" name="postID">
                 <div class="form-group">
