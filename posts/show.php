@@ -7,15 +7,15 @@
 if(isset($_POST['delete'])){
     require_once ("../classes/dbconnect.php");
     require_once ("../classes/post.php");
-    $post = new post();
+    $post = new Post();
     $post->deletePosts($_POST['delete']);
     header("location: show.php");
     exit();
 }
 require_once ("../classes/dbconnect.php");
 require_once ("../classes/post.php");
-    $post = new post();
-    $posts = $post->showPost($_POST);
+$post = new Post();
+$posts = $post->showPost();
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -27,6 +27,13 @@ require_once ("../classes/post.php");
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
         <title>Post</title>
+        <script>
+            function confirmDelete(postID) {
+                if (confirm("Weet je zeker dat je dit post wilt verwijderen?")) {
+                    document.getElementById('deleteForm_' + postID).submit();
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -45,8 +52,9 @@ require_once ("../classes/post.php");
                         <div class="post-description"><?php echo htmlspecialchars($post->beschrijving); ?></div>
                         <div class="post-actions">
                             <a href="edit.php?postID=<?php echo htmlspecialchars($post->postID); ?>">Edit</a>
-                            <form method="POST">
-                                <button name="delete" type="submit" value="<?php echo htmlspecialchars($post->postID); ?>">Delete</button>
+                            <form method="POST" id="deleteForm_<?php echo htmlspecialchars($post->postID); ?>">
+                                <button type="button" onclick="confirmDelete(<?php echo htmlspecialchars($post->postID); ?>)">Delete</button>
+                                <input type="hidden" name="delete" value="<?php echo htmlspecialchars($post->postID); ?>">
                             </form>
                         </div>
                     </li>
@@ -58,14 +66,15 @@ require_once ("../classes/post.php");
             </ul>
             
             <div class="button-container">
-                <a href="add.php" class="button">add post</a>
-                <a href="../Admin.php" class="button">back to admin panel</a>
+                <a href="add.php" class="button">Add Post</a>
+                <a href="../Admin.php" class="button">Back to Admin Panel</a>
                 <?php if ($postCount >= 12): ?>
                     <button id="next-btn" class="button" onclick="loadNextPage()">Next</button>
                 <?php endif; ?>
             </div>
         </main>
     </body>
+</html>
         <script>
             var page = 1; // Initialize page number
 
