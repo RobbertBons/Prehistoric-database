@@ -8,7 +8,7 @@
 
 <section class="grid-container">
     <div class="button-container">
-        <a href="Items.php" class="button">Creatures or plants</a>
+        <a href="items/show.php" class="button">Creatures or plants</a>
     </div>
     <div class="button-container">
         <div class="button">User display</div>
