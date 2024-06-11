@@ -1,8 +1,8 @@
-CREATE TABLE post(
-  	postID INT NOT NULL AUTO_INCREMENT,
-    title varchar(255),
-    beschrijving varchar(255),
-    PRIMARY KEY(postID)
+CREATE TABLE post (
+    postID INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255),
+    beschrijving TEXT,
+    PRIMARY KEY (postID)
 );
 CREATE TABLE users (
     userID INT NOT NULL AUTO_INCREMENT,
