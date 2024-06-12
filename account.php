@@ -35,7 +35,3 @@
     <a href="Admin.php" class="button">Admin panel</a>
 </article>
 
-
-<?php
-    require_once ('partials/footer.php');
-?>

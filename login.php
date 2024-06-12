@@ -1,5 +1,4 @@
 <?php
-require_once ('partials/header.php');
 
 if(isset($_POST['submit'])){
  
@@ -32,8 +31,4 @@ if(isset($_POST['submit'])){
     	</section>
     </main>
 
-
-<?php
-require_once 'partials/footer.php';
-?>
 
