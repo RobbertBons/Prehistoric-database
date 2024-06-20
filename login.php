@@ -16,6 +16,7 @@ if(isset($_POST['submit'])){
 	<link rel="stylesheet" type="text/css" href="css/login.css">
     <main>
     	<section class="form">
+			<h2 class="titel">Login</h2>
 	    	<form method="post" action="">
 	    		<label for="username" id="username">username: </label>
 	    		<input type="text" name="username" required><!-- test -->

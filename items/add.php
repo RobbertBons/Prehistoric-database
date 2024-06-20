@@ -6,7 +6,7 @@
 // }
 if(isset($_POST['submit'])){
     require_once ("../classes/dbconnect.php");
-    require_once ("../classes/item.php");
+    require_once ("../classes/items.php");
     $item = new Item();
     $item->addItem($_POST);
     header("location: show.php");
