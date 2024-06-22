@@ -7,7 +7,7 @@
 
 if(isset($_POST['delete'])){
     require_once ("../classes/dbconnect.php");
-    require_once ("../classes/item.php");
+    require_once ("../classes/items.php");
     $item = new Item();
     $item->deleteItem($_POST['delete']);
     header("location: show.php");
